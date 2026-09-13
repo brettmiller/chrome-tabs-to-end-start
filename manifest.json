@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Move Tab To End",
+  "version": "1.0.0",
+  "description": "Keyboard shortcut to move the active (or selected) tabs to the end of the tab strip.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "move-tab-to-end": {
+      "suggested_key": {
+        "default": "Alt+Shift+E",
+        "mac": "MacCtrl+Shift+E"
+      },
+      "description": "Move tab to end of tab strip"
+    }
+  }
+}
