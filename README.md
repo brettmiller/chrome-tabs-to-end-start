@@ -1,7 +1,8 @@
 # Move Tab To End or Start
 
-Adds two keyboard shortcuts that move the active tab — or every ctrl/shift-selected
-tab — to the end or the start of the current window's tab strip.
+Moves the active tab — or every ctrl/shift-selected tab — to the end or the
+start of the current window's tab strip. Two ways to trigger it: a keyboard
+shortcut, or the tab right-click menu.
 
 | Action | Windows/Linux/ChromeOS | macOS |
 | --- | --- | --- |
@@ -12,6 +13,9 @@ Rebind at `chrome://extensions/shortcuts`. Chrome silently drops a suggested
 binding that collides with another extension, so if a shortcut does nothing,
 check that page first.
 
+Right-clicking any tab also gives **Move to end of tab strip** and **Move to
+start of tab strip**.
+
 ## Install
 
 1. Go to `chrome://extensions`
@@ -20,8 +24,10 @@ check that page first.
 
 ## Permissions
 
-None. The manifest declares no `permissions`, no `host_permissions`, no
-content scripts, and no web-accessible resources.
+One: `"contextMenus"`, for the right-click entries. Chrome shows **no
+permission warning** on install, because `contextMenus` grants no access to
+anything about your tabs. No `host_permissions`, no content scripts, no
+web-accessible resources.
 
 `chrome.tabs.move()` and `chrome.tabs.query()` are unprivileged. The `"tabs"`
 permission only unlocks the sensitive `Tab` fields (`url`, `pendingUrl`,
@@ -38,6 +44,9 @@ page content, and makes no network requests.
 - **Multi-select is Chrome's**, not this extension's: ctrl/cmd-click or
   shift-click tabs as usual and the shortcut applies to all of them, preserving
   their relative order.
+- **Right-clicking a tab outside the current selection** moves just that tab,
+  matching how Chrome's own tab menu items behave. Right-click a tab that is
+  part of the selection and the whole selection moves.
 - **Grouped tabs** moved out of their group's range are removed from the group
   by Chrome. That's Chrome's behavior, not something this extension does.
 - **Mid-drag** edits are rejected by Chrome; the move retries up to 10 times at

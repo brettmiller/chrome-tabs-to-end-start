@@ -5,6 +5,8 @@ import assert from "node:assert/strict";
 
 globalThis.chrome = {
   commands: { onCommand: { addListener() {} } },
+  contextMenus: { onClicked: { addListener() {} }, removeAll() {}, create() {} },
+  runtime: { onInstalled: { addListener() {} } },
   tabs: { TAB_ID_NONE: -1 },
 };
 

@@ -6,13 +6,13 @@ dependencies — edit `background.js` and `manifest.json` directly.
 
 ## Constraints
 
-- **Zero permissions is a hard constraint.** The manifest declares no
-  `permissions`, `host_permissions`, `content_scripts`, or
-  `web_accessible_resources`, so Chrome shows no install warning. The `"tabs"`
-  permission only gates the sensitive `Tab` fields (`url`, `pendingUrl`,
+- **No install warning is a hard constraint.** The only permission is
+  `"contextMenus"`, which Chrome does not warn about; there are no
+  `host_permissions`, content scripts, or web-accessible resources. The
+  `"tabs"` permission gates the sensitive `Tab` fields (`url`, `pendingUrl`,
   `title`, `favIconUrl`); this code reads only `id`, `pinned`, and `windowId`.
-  Ask before adding any permission — reading a URL or title forfeits the
-  property.
+  Ask before adding any permission, and check it against the permissions list
+  first — anything that warns forfeits the property.
 - **Never log tab objects**, which can carry URLs into the console. Log
   `error.message` only.
 - **Index arithmetic belongs in `targetIndex()`** in `background.js`, which is
