@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Source for 16px and 32px only. Same design as icon.svg, but the arrow is
+       near-white and fatter: at menu size the arrow is barely a pixel thick, and
+       matching it to the active tab's grey leaves too little contrast to read. -->
+  <rect width="128" height="128" rx="26" fill="#5e6775"/>
+  <path d="M4 66 V32 a9 9 0 0 1 9-9 h31 v43 z" fill="#26292d"/>
+  <path d="M84 66 V23 h31 a9 9 0 0 1 9 9 v34 z" fill="#26292d"/>
+  <path d="M28 66 C36 66 40 62 40 54 V24 a10 10 0 0 1 10-10 h28 a10 10 0 0 1 10 10 v30 c0 8 4 12 12 12 z" fill="#c9cfd6"/>
+  <path d="M4 100 L36 78 v44 z" fill="#f2f5f8"/>
+  <path d="M124 100 L92 78 v44 z" fill="#f2f5f8"/>
+  <rect x="32" y="90" width="64" height="20" rx="10" fill="#f2f5f8"/>
+</svg>

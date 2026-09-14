@@ -63,10 +63,14 @@ node --check background.js   # syntax
 node test.mjs                # index arithmetic
 ```
 
-`icons/icon.svg` is the source for all four PNGs. To regenerate after editing it:
+Two SVG sources. `icons/icon.svg` drives 48 and 128; `icons/icon-small.svg`
+drives 16 and 32, and differs only in having a brighter, fatter arrow — at
+context-menu size the arrow is barely a pixel thick, and matching it to the
+active tab's grey leaves too little contrast to read. To regenerate:
 
 ```bash
-for s in 16 32 48 128; do rsvg-convert -w $s -h $s icons/icon.svg -o icons/icon$s.png; done
+for s in 16 32;  do rsvg-convert -w $s -h $s icons/icon-small.svg -o icons/icon$s.png; done
+for s in 48 128; do rsvg-convert -w $s -h $s icons/icon.svg       -o icons/icon$s.png; done
 ```
 
 ### Releasing
