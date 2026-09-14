@@ -63,6 +63,12 @@ node --check background.js   # syntax
 node test.mjs                # index arithmetic
 ```
 
+`icons/icon.svg` is the source for all four PNGs. To regenerate after editing it:
+
+```bash
+for s in 16 32 48 128; do rsvg-convert -w $s -h $s icons/icon.svg -o icons/icon$s.png; done
+```
+
 ## License
 
 [MIT](LICENSE) © 2026 Brett Miller
