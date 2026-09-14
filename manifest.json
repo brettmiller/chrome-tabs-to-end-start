@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Move Tab To End or Start",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Keyboard shortcuts to move the active (or selected) tabs to the end or start of the tab strip.",
   "permissions": ["contextMenus"],
   "icons": {
@@ -17,8 +17,7 @@
   "commands": {
     "move-tab-to-end": {
       "suggested_key": {
-        "default": "Alt+Shift+E",
-        "mac": "MacCtrl+Shift+E"
+        "default": "Alt+Shift+E"
       },
       "description": "Move tab to end of tab strip"
     },

@@ -6,7 +6,7 @@ shortcut, or the tab right-click menu.
 
 | Action | Windows/Linux/ChromeOS | macOS |
 | --- | --- | --- |
-| Move tab to end | `Alt+Shift+E` | `Control+Shift+E` |
+| Move tab to end | `Alt+Shift+E` | `Option+Shift+E` |
 | Move tab to start | `Alt+Shift+S` | `Option+Shift+S` |
 
 Rebind at `chrome://extensions/shortcuts`. Chrome silently drops a suggested
