@@ -69,6 +69,20 @@ node test.mjs                # index arithmetic
 for s in 16 32 48 128; do rsvg-convert -w $s -h $s icons/icon.svg -o icons/icon$s.png; done
 ```
 
+### Releasing
+
+Bump `version` in `manifest.json`, commit, then:
+
+```bash
+./release.sh
+```
+
+It refuses unless you're on `main` with a clean tree, the tag doesn't already
+exist, and the version is newer than the last released tag. On success it
+pushes the branch and an annotated tag, which triggers
+`.github/workflows/release.yml` to attach a zip of the extension
+(`manifest.json`, `background.js`, `icons/*.png`) to a GitHub release.
+
 ## License
 
 [MIT](LICENSE) © 2026 Brett Miller
