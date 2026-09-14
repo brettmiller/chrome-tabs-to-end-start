@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Move Tab To End or Start",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Keyboard shortcuts to move the active (or selected) tabs to the end or start of the tab strip.",
   "permissions": ["contextMenus"],
   "icons": {
