@@ -63,8 +63,16 @@ export function targetIndex(edge, isPinned, pinnedCount) {
   // The first unpinned slot sits immediately after the pinned block.
   if (edge === "start") return isPinned ? 0 : pinnedCount;
   // -1 means end-of-strip, which is only a legal target for unpinned tabs.
-  // For pinned tabs the last slot of the pinned block is pinnedCount - 1; the
-  // per-tab increment above walks any remaining tabs into place behind it.
+  //
+  // For pinned tabs the target is the last slot of the pinned block. It does
+  // NOT depend on how many tabs are moving, because of the per-tab increment
+  // described above -- pass the first tab's destination and the rest follow.
+  //
+  // Do not "fix" this to `pinnedCount - movingCount`. That looks more correct,
+  // and it is what this code originally did, but it is wrong for every move of
+  // two or more pinned tabs: given [p q r] moving p+q, it yields [p r q]
+  // instead of [r p q]. It happens to agree with the line below when exactly
+  // one tab moves, which is why the bug went unnoticed.
   return isPinned ? Math.max(0, pinnedCount - 1) : -1;
 }
 
