@@ -1,4 +1,4 @@
-# Move Tab To End or Start
+# Move Tabs To End or Start
 
 Moves the active tab — or every ctrl/shift-selected tab — to the end or the
 start of the current window's tab strip. Two ways to trigger it: a keyboard

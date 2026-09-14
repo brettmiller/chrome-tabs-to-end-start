@@ -1,4 +1,4 @@
-// Move Tab To End / Start
+// Move Tabs To End / Start
 // Moves the active tab -- or all highlighted (multi-selected) tabs -- to the
 // end or the start of its window's tab strip, via keyboard shortcut or the
 // tab right-click menu.
